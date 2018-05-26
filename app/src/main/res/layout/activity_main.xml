@@ -22,7 +22,7 @@
         android:layout_height="58dp"
         android:layout_gravity="center"
         android:text="@string/titol"
-        android:fontFamily="@font/littlelordfontleroynf"
+        android:fontFamily="@font/bob"
         android:textAlignment="center"
         android:textColor="@color/colorBlanc"
         android:textSize="15pt"

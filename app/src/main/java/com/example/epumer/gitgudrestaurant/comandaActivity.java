@@ -2,28 +2,28 @@ package com.example.epumer.gitgudrestaurant;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
+import android.widget.TextView;
 
 public class comandaActivity extends AppCompatActivity {
 
-    private Plat[] mPlatsBank = new Plat[] {
-            new Plat("Arroz al minecraft",20.99f,Plat.Tipus.primer, R.drawable.plato1)
-    };
+    private Plat[] mPlatsBank;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_comanda);
+        mPlatsBank = new Plat[] {
+                new Plat(this, "Arroz al minecraft",3.99f,Plat.Tipus.primer, R.drawable.plato1 ),
+                new Plat(this, "Patatas rellenas de jamón y queso",2.99f,Plat.Tipus.primer, R.drawable.patatas_rellenas )
+        };
         for ( Plat mPlat : mPlatsBank ) {
             switch(mPlat.getTipus()) {
                 case primer:
-                    ImageView imagen = new ImageView(this);
-                    imagen.setImageDrawable(getDrawable(mPlat.getIdImagen()));
-                    LinearLayout ll = (LinearLayout) findViewById(R.id.primers);
-                    LinearLayout.LayoutParams lp = new LinearLayout.LayoutParams((int) getResources().getDimension(R.dimen.imageview_width),(int) getResources().getDimension(R.dimen.imageview_height));
-                    imagen.setLayoutParams(lp);
-                    ll.addView(imagen);
+                    afegirPlat( mPlat, (LinearLayout) findViewById(R.id.primers));
                     break;
                 case segon:
                     break;
@@ -34,5 +34,15 @@ public class comandaActivity extends AppCompatActivity {
 
             }
         }
+    }
+
+    private void afegirPlat(Plat mPlat, LinearLayout ll) {
+        mPlat.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                v.setBackgroundColor(getResources().getColor(R.color.seleccionado));
+            }
+        });
+        ll.addView(mPlat);
     }
 }

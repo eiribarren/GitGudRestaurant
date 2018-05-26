@@ -7,5 +7,7 @@
     <color name="colorText">#000000</color>
     <color name="colorBlanc">#FFFFFF</color>
     <color name="colorMadera">#FF6000</color>
+    <color name="colorPrecio">#34ff2d</color>
     <color name="sombra">#4c000000</color>
+    <color name="seleccionado">#77000000</color>
 </resources>

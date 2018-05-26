@@ -1,11 +1,15 @@
 package com.example.epumer.gitgudrestaurant;
 
+import android.content.Context;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
+import android.widget.TextView;
 
-public class Plat {
+public class Plat extends RelativeLayout{
     private String nom;
-    private int idImagen;
-    private float preu;
+    private TextView preu;
+    private ImageView imagen;
     private String ingredients;
     private String descripcio;
     private Tipus tipus;
@@ -14,20 +18,30 @@ public class Plat {
         primer, segon, postre, beguda
     }
 
-    public Plat ( String nom, float preu, Tipus tipus, int idImagen) {
+    public Plat ( Context context, String nom, float preu, Tipus tipus, int idImagen ) {
+        super(context);
         this.nom = nom;
-        this.preu = preu;
         this.tipus = tipus;
-        this.idImagen = idImagen;
+        this.preu = new TextView(context);
+        this.preu.setText(String.valueOf(preu) + "€");
+        this.preu.setPadding(5,5,5,5);
+        this.preu.setTextColor(context.getResources().getColor(R.color.colorPrecio));
+        this.preu.setBackgroundColor(context.getResources().getColor(R.color.sombra));
+        this.imagen = new ImageView(context);
+        this.imagen.setImageDrawable(context.getResources().getDrawable(idImagen));
+        LinearLayout.LayoutParams lp = new LinearLayout.LayoutParams((int) getResources().getDimension(R.dimen.imageview_width),(int) getResources().getDimension(R.dimen.imageview_height));
+        this.imagen.setLayoutParams(lp);
+        this.addView(this.preu);
+        this.addView(this.imagen);
     }
 
-    public Plat ( String nom, float preu, Tipus tipus, int idImagen, String ingredients ) {
-        this(nom,preu,tipus, idImagen);
+    public Plat ( Context context, String nom, float preu, Tipus tipus, int idImagen, String ingredients ) {
+        this(context,nom,preu,tipus, idImagen);
         this.ingredients = ingredients;
     }
 
-    public Plat ( String nom, float preu, Tipus tipus, int idImagen, String ingredients, String descripcio ) {
-        this(nom,preu,tipus,idImagen,ingredients);
+    public Plat ( Context context, String nom, float preu, Tipus tipus, int idImagen, String ingredients, String descripcio ) {
+        this(context, nom,preu,tipus, idImagen, ingredients);
         this.descripcio = descripcio;
     }
 
@@ -37,14 +51,6 @@ public class Plat {
 
     public void setNom(String nom) {
         this.nom = nom;
-    }
-
-    public float getPreu() {
-        return preu;
-    }
-
-    public void setPreu(float preu) {
-        this.preu = preu;
     }
 
     public String getIngredients() {
@@ -69,13 +75,5 @@ public class Plat {
 
     public void setTipus(Tipus tipus) {
         this.tipus = tipus;
-    }
-
-    public int getIdImagen() {
-        return idImagen;
-    }
-
-    public void setIdImagen(int idImagen) {
-        this.idImagen = idImagen;
     }
 }
