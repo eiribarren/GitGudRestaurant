@@ -3,6 +3,8 @@
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
-    <color name="colorPantallaPrincipal">#3E3F3F</color>
-    <color name="colorText">#FFFFFF</color>
+    <color name="colorPantallaPrincipal">#e5e5e5</color>
+    <color name="colorText">#000000</color>
+    <color name="colorMadera">#FF4C00</color>
+    <color name="sombra">#4c000000</color>
 </resources>

@@ -1,4 +1,10 @@
 <resources>
     <string name="app_name">GitGudRestaurant</string>
     <string name="titol">GitGud Restaurants</string>
+    <string name="boto_comanda">Iniciar comanda</string>
+    <string name="boto_afegir">Afegir</string>
+    <string name="primers_text">Primers</string>
+    <string name="segons_text">Segons</string>
+    <string name="postres_text">Postres</string>
+    <string name="begudes_text">Begudes</string>
 </resources>

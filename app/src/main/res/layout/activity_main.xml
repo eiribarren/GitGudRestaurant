@@ -4,9 +4,18 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation = "vertical"
     tools:context=".MainActivity"
-    android:background="@color/colorPantallaPrincipal"
-    android:gravity="center">
+    android:background="@color/colorMadera"
+    >
+
+    <ImageView
+        android:id="@+id/logo"
+        android:layout_width="wrap_content"
+        android:layout_height="344dp"
+        android:contentDescription="comida"
+        android:elevation="5dp"
+        app:srcCompat="@drawable/logo" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -15,11 +24,20 @@
         android:textAlignment="center"
         android:text="@string/titol"
         android:textColor="@color/colorText"
-        android:fontFamily="@font/LittleLordFontleroyNF"
+        android:fontFamily="@font/littlelordfontleroynf"
         android:textSize="30pt"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+
+    <Button
+        android:layout_gravity="center"
+        android:id="@+id/boto_comanda"
+        android:text="@string/boto_comanda"
+        android:background="@drawable/boton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
 
 </LinearLayout>
