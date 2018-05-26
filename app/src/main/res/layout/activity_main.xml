@@ -18,14 +18,14 @@
         app:srcCompat="@drawable/logo" />
 
     <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="360dp"
+        android:layout_height="58dp"
         android:layout_gravity="center"
-        android:textAlignment="center"
         android:text="@string/titol"
-        android:textColor="@color/colorText"
         android:fontFamily="@font/littlelordfontleroynf"
-        android:textSize="30pt"
+        android:textAlignment="center"
+        android:textColor="@color/colorBlanc"
+        android:textSize="15pt"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
@@ -36,8 +36,9 @@
         android:layout_gravity="center"
         android:id="@+id/boto_comanda"
         android:text="@string/boto_comanda"
+        android:textColor="@color/colorMadera"
         android:background="@drawable/boton"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 
 </LinearLayout>

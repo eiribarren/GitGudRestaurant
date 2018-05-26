@@ -24,7 +24,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void escoltadorIniciarComanda(View v) {
-        Intent intent = new Intent(this, ComandaActivity.class);
+        Intent intent = new Intent(this, comandaActivity.class);
         startActivity(intent);
     }
 }

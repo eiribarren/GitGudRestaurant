@@ -59,7 +59,7 @@
                 android:orientation="horizontal"
                 android:layout_width="match_parent"
                 android:layout_height="100dp"
-                android:id="@+id/postres">
+                android:id="@+id/postres" />
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -72,7 +72,6 @@
                 android:layout_height="100dp"
                 android:id="@+id/begudes"/>
         </LinearLayout>
-
         <View
             android:layout_width="67dp"
             android:layout_height="61dp"
@@ -86,6 +85,5 @@
             android:elevation="5dp"
             android:id="@+id/logo"
             app:srcCompat="@drawable/logo" />
-        </LinearLayout>
     </RelativeLayout>
 </LinearLayout>
