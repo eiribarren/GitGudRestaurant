@@ -18,7 +18,7 @@ public class comandaActivity extends AppCompatActivity {
         setContentView(R.layout.activity_comanda);
         mPlatsBank = new Plat[] {
                 new Plat(this, "Arroz al minecraft",3.99f,Plat.Tipus.primer, R.drawable.plato1 ),
-                new Plat(this, "Patatas rellenas de jamón y queso",2.99f,Plat.Tipus.primer, R.drawable.patatas_rellenas )
+                new Plat(this, "Patatas rellenas",2.99f,Plat.Tipus.primer, R.drawable.patatas_rellenas )
         };
         for ( Plat mPlat : mPlatsBank ) {
             switch(mPlat.getTipus()) {
@@ -26,10 +26,13 @@ public class comandaActivity extends AppCompatActivity {
                     afegirPlat( mPlat, (LinearLayout) findViewById(R.id.primers));
                     break;
                 case segon:
+                    afegirPlat( mPlat, (LinearLayout) findViewById(R.id.segons));
                     break;
                 case postre:
+                    afegirPlat( mPlat, (LinearLayout) findViewById(R.id.postres));
                     break;
                 case beguda:
+                    afegirPlat( mPlat, (LinearLayout) findViewById(R.id.begudes));
                     break;
 
             }
