@@ -16,7 +16,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".comandaActivity"></activity>
+        <activity android:name=".comandaActivity" />
+        <activity android:name=".confirmarFacturaActivity"></activity>
     </application>
 
 </manifest>
