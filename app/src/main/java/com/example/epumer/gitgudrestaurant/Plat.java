@@ -1,18 +1,20 @@
 package com.example.epumer.gitgudrestaurant;
 
 import android.content.Context;
+import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
-public class Plat extends RelativeLayout{
+public class Plat extends RelativeLayout implements View.OnClickListener {
     private String nom;
     private TextView preu;
     private ImageView imagen;
     private String ingredients;
     private String descripcio;
     private Tipus tipus;
+    private boolean seleccionado;
 
     public enum Tipus {
         primer, segon, postre, beguda
@@ -76,4 +78,20 @@ public class Plat extends RelativeLayout{
     public void setTipus(Tipus tipus) {
         this.tipus = tipus;
     }
+
+    public void seleccionar() { this.seleccionado = true; setBackgroundColor(getResources().getColor(R.color.seleccionado)); }
+
+    public void deseleccionar() { this.seleccionado = false; setBackgroundColor(getResources().getColor(R.color.colorPantallaPrincipal)); }
+
+    public boolean estaSeleccionado() { return this.seleccionado; }
+
+    @Override
+    public void onClick(View v) {
+        if ( estaSeleccionado() ) {
+            deseleccionar();
+        } else {
+            seleccionar();
+        }
+    }
+
 }
