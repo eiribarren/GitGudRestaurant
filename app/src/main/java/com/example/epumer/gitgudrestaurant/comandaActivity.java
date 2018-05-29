@@ -1,5 +1,6 @@
 package com.example.epumer.gitgudrestaurant;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -8,8 +9,11 @@ import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
-public class comandaActivity extends AppCompatActivity {
+import java.util.ArrayList;
 
+public class comandaActivity extends AppCompatActivity {
+    public final static String CLAU_EXTRA_PLATS = "com.example.epumer.gitgudrestaurants.platosDelMenuDelUsuario";
+    public ArrayList<Plat> platosDelMenuDelUsuario;
     private Plat[] mPlatsBank;
 
     @Override
@@ -44,5 +48,17 @@ public class comandaActivity extends AppCompatActivity {
     private void afegirPlat(Plat mPlat, LinearLayout ll) {
         mPlat.setOnClickListener(mPlat);
         ll.addView(mPlat);
+    }
+
+    private void escoltadorFinalitzarComanda(View v) {
+        platosDelMenuDelUsuario = new ArrayList<Plat>();
+        Intent intent = new Intent(this, comandaActivity.class);
+        for ( Plat mPlat : mPlatsBank ) {
+            if ( mPlat.estaSeleccionado() ) {
+                platosDelMenuDelUsuario.add(mPlat);
+            }
+        }
+        intent.putExtra(CLAU_EXTRA_PLATS, platosDelMenuDelUsuario);
+        startActivity(intent);
     }
 }

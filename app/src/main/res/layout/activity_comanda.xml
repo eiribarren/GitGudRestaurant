@@ -22,56 +22,69 @@
                 android:layout_height="65dp"
                 android:background="@drawable/barra"
                 />
-            <View
-                android:layout_width="wrap_content"
-                android:layout_height="2dp"
-                android:background="@drawable/sombra"
-                />
-            <TextView
+            <ScrollView
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@drawable/barra_menu"
-                android:text="@string/primers_text"/>
+                android:layout_height="wrap_content">
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                        <View
+                            android:layout_width="wrap_content"
+                            android:layout_height="2dp"
+                            android:background="@drawable/sombra"
+                            />
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/barra_menu"
+                            android:text="@string/primers_text"/>
+                    <HorizontalScrollView
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/imageview_height"><LinearLayout
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:id="@+id/primers"/></HorizontalScrollView>
 
-            <LinearLayout
-                android:orientation="horizontal"
-                android:layout_width="match_parent"
-                android:layout_height="100dp"
-                android:id="@+id/primers"/>
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@drawable/barra_menu"
-                android:text="@string/segons_text"/>
 
-            <LinearLayout
-                android:orientation="horizontal"
-                android:layout_width="match_parent"
-                android:layout_height="100dp"
-                android:id="@+id/segons"/>
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@drawable/barra_menu"
-                android:text="@string/postres_text"/>
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/barra_menu"
+                        android:text="@string/segons_text"/>
 
-            <LinearLayout
-                android:orientation="horizontal"
-                android:layout_width="match_parent"
-                android:layout_height="100dp"
-                android:id="@+id/postres" />
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@drawable/barra_menu"
-                android:text="@string/begudes_text"/>
+                    <LinearLayout
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/imageview_height"
+                        android:id="@+id/segons"/>
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/barra_menu"
+                        android:text="@string/postres_text"/>
 
-            <LinearLayout
-                android:orientation="horizontal"
-                android:layout_width="match_parent"
-                android:layout_height="100dp"
-                android:id="@+id/begudes"/>
+                    <LinearLayout
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/imageview_height"
+                        android:id="@+id/postres" />
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/barra_menu"
+                        android:text="@string/begudes_text"/>
+
+                    <LinearLayout
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/imageview_height"
+                        android:id="@+id/begudes"/>
+                </LinearLayout>
+            </ScrollView>
         </LinearLayout>
+
         <View
             android:layout_width="67dp"
             android:layout_height="61dp"
