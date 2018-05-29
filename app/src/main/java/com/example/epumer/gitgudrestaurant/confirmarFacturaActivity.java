@@ -13,7 +13,7 @@ public class confirmarFacturaActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_confirmar_factura);
-        mEditButton = (Button) findViewById(R.id.boto_enrere);
+        mEditButton = (Button) findViewById(R.id.boto_EditButton);
         mEditButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
