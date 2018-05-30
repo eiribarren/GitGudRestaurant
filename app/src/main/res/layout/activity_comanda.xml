@@ -41,11 +41,13 @@
                             android:text="@string/primers_text"/>
                     <HorizontalScrollView
                         android:layout_width="match_parent"
-                        android:layout_height="@dimen/imageview_height"><LinearLayout
+                        android:layout_height="@dimen/imageview_height">
+                        <LinearLayout
                         android:orientation="horizontal"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:id="@+id/primers"/></HorizontalScrollView>
+                        android:id="@+id/primers"/>
+                    </HorizontalScrollView>
 
 
                     <TextView
@@ -54,33 +56,45 @@
                         android:background="@drawable/barra_menu"
                         android:text="@string/segons_text"/>
 
-                    <LinearLayout
-                        android:orientation="horizontal"
+                    <HorizontalScrollView
                         android:layout_width="match_parent"
-                        android:layout_height="@dimen/imageview_height"
-                        android:id="@+id/segons"/>
+                        android:layout_height="@dimen/imageview_height">
+                        <LinearLayout
+                            android:orientation="horizontal"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:id="@+id/segons"/>
+                    </HorizontalScrollView>
+
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:background="@drawable/barra_menu"
                         android:text="@string/postres_text"/>
-
-                    <LinearLayout
-                        android:orientation="horizontal"
+                    <HorizontalScrollView
                         android:layout_width="match_parent"
-                        android:layout_height="@dimen/imageview_height"
-                        android:id="@+id/postres" />
+                        android:layout_height="@dimen/imageview_height">
+                        <LinearLayout
+                            android:orientation="horizontal"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:id="@+id/postres" />
+                    </HorizontalScrollView>
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:background="@drawable/barra_menu"
                         android:text="@string/begudes_text"/>
 
-                    <LinearLayout
-                        android:orientation="horizontal"
+                    <HorizontalScrollView
                         android:layout_width="match_parent"
-                        android:layout_height="@dimen/imageview_height"
-                        android:id="@+id/begudes"/>
+                        android:layout_height="@dimen/imageview_height">
+                        <LinearLayout
+                            android:orientation="horizontal"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:id="@+id/begudes"/>
+                    </HorizontalScrollView>
                 </LinearLayout>
             </ScrollView>
         </LinearLayout>
