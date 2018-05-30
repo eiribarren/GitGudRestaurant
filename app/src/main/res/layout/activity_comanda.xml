@@ -95,6 +95,13 @@
                             android:layout_height="match_parent"
                             android:id="@+id/begudes"/>
                     </HorizontalScrollView>
+                    <Button
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Confirmar"
+                        android:background="@drawable/sombra"
+                        android:id="@+id/finalitzar"
+                        />
                 </LinearLayout>
             </ScrollView>
         </LinearLayout>

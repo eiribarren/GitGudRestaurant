@@ -7,4 +7,5 @@
     <string name="segons_text">Segons</string>
     <string name="postres_text">Postres</string>
     <string name="begudes_text">Begudes</string>
+    <string name="finalitzar_text">Confirmar</string>
 </resources>

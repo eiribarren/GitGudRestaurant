@@ -1,13 +1,15 @@
 package com.example.epumer.gitgudrestaurant;
 
 import android.content.Context;
+import android.os.Parcel;
+import android.os.Parcelable;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
-public class Plat extends RelativeLayout implements View.OnClickListener {
+public class Plat extends RelativeLayout implements View.OnClickListener, Parcelable {
     private String nom;
     private TextView preu;
     private ImageView imagen;
@@ -15,6 +17,16 @@ public class Plat extends RelativeLayout implements View.OnClickListener {
     private String descripcio;
     private Tipus tipus;
     private boolean seleccionado;
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+        dest.writeString(this.nom);
+    }
 
     public enum Tipus {
         primer, segon, postre, beguda
