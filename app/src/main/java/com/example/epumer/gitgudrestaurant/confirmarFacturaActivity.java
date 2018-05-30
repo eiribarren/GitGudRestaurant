@@ -20,7 +20,7 @@ public class confirmarFacturaActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         Intent intent= getIntent();
-        platsSeleccionats = intent.getParcelableArrayListExtra(CLAU_EXTRA_PLATS);
+        platsSeleccionats = intent.getParcelableArrayListExtra(CLAU_EXTRA_PLATS); // Aqui esta el error!
         setContentView(R.layout.activity_confirmar_factura);
         LinearLayout ll = (LinearLayout)findViewById(R.id.Factura);
         for(Plat p : platsSeleccionats){
