@@ -49,6 +49,10 @@ public class Plat extends RelativeLayout implements View.OnClickListener, Parcel
         this.addView(this.imagen);
     }
 
+    public Plat(Parcel source) {
+        prevName =
+    }
+
     public Plat ( Context context, String nom, float preu, Tipus tipus, int idImagen, String ingredients ) {
         this(context,nom,preu,tipus, idImagen);
         this.ingredients = ingredients;
@@ -105,5 +109,13 @@ public class Plat extends RelativeLayout implements View.OnClickListener, Parcel
             seleccionar();
         }
     }
+    public static final Parcelable.Creator<Plat> CREATOR  =  new Parcelable.Creator<Plat>() {
+        public Plat createFromParcel(Parcel in) {
+            return new Plat (in);
+        }
+        public Plat [] newArray(int size) {
+            return new Plat [size];
+        }
+    };
 
 }
