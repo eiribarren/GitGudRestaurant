@@ -8,4 +8,6 @@
     <string name="postres_text">Postres</string>
     <string name="begudes_text">Begudes</string>
     <string name="finalitzar_text">Confirmar</string>
+    <string name="pantalla_pagament">Seleccioni el mètode de pagament</string>
+
 </resources>

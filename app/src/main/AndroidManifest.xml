@@ -17,7 +17,8 @@
             </intent-filter>
         </activity>
         <activity android:name=".comandaActivity" />
-        <activity android:name=".confirmarFacturaActivity"></activity>
+        <activity android:name=".confirmarFacturaActivity" />
+        <activity android:name=".formadepago"></activity>
     </application>
 
 </manifest>
