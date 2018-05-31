@@ -2,5 +2,6 @@
 <resources>
     <dimen name="imageview_width">150dp</dimen>
     <dimen name="imageview_height">150dp</dimen>
-    <dimen name="max_width_desc">200dp</dimen>
+    <dimen name="max_width_descrip">300dp</dimen>
+    <dimen name="max_width_preu">100dp</dimen>
 </resources>
