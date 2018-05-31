@@ -36,7 +36,11 @@ public class confirmarFacturaActivity extends AppCompatActivity {
             TextView tv = new TextView(this);
             TextView preu_tv = new TextView(this);
             tv.setText(nom);
+            tv.setTextSize(20);
+
+            preu_tv.setTextSize(24);
             preu_tv.setText(preu + "€");
+
             if(tv.getParent()!=null)
                 ((ViewGroup)tv.getParent()).removeView(tv);
             if(preu_tv.getParent()!=null)
