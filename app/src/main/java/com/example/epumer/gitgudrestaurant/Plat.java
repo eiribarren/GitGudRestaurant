@@ -9,16 +9,7 @@ import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
-public class Plat extends RelativeLayout implements View.OnClickListener, Parcelable {
-
-    public static final Parcelable.Creator<Plat> CREATOR  =  new Parcelable.Creator<Plat>() {
-        public Plat createFromParcel(Parcel in) {
-            return new Plat(in);
-        }
-        public Plat [] newArray(int size) {
-            return new Plat [size];
-        }
-    };
+public class Plat extends RelativeLayout implements View.OnClickListener {
 
     private String nom;
     private float preu;
@@ -29,20 +20,6 @@ public class Plat extends RelativeLayout implements View.OnClickListener, Parcel
     private Tipus tipus;
     private boolean seleccionado;
 
-    @Override
-    public int describeContents() {
-        return 0;
-    }
-
-    @Override
-    public void writeToParcel(Parcel dest, int flags) {
-        dest.writeFloat(this.preu);
-        dest.writeString(this.nom);
-    }
-    public void readFromParcel(Parcel in){
-        this.preu = in.readFloat();
-        this.nom  = in.readString();
-    }
     public enum Tipus {
         primer, segon, postre, beguda
     }
@@ -55,23 +32,15 @@ public class Plat extends RelativeLayout implements View.OnClickListener, Parcel
         this.preu = preu;
         this.preuTextView = new TextView(context);
         this.preuTextView.setText(String.valueOf(preu) + "€");
-        this.preuTextView.setPadding(5,5,5,5);
+        this.preuTextView.setPadding(5, 5, 5, 5);
         this.preuTextView.setTextColor(context.getResources().getColor(R.color.colorPrecio));
         this.preuTextView.setBackgroundColor(context.getResources().getColor(R.color.sombra));
         this.imagen = new ImageView(context);
         this.imagen.setImageDrawable(context.getResources().getDrawable(idImagen));
-        LinearLayout.LayoutParams lp = new LinearLayout.LayoutParams((int) getResources().getDimension(R.dimen.imageview_width),(int) getResources().getDimension(R.dimen.imageview_height));
+        LinearLayout.LayoutParams lp = new LinearLayout.LayoutParams((int) getResources().getDimension(R.dimen.imageview_width), (int) getResources().getDimension(R.dimen.imageview_height));
         this.imagen.setLayoutParams(lp);
         this.addView(this.preuTextView);
         this.addView(this.imagen);
-    }
-
-
-
-    public Plat(Context context, Parcel source) {
-        super(context);
-        readFromParcel(source);
-
     }
 
     public Plat (Context context, String nom, float preuTextView, Tipus tipus, int idImagen, String ingredients ) {
@@ -90,6 +59,14 @@ public class Plat extends RelativeLayout implements View.OnClickListener, Parcel
 
     public void setNom(String nom) {
         this.nom = nom;
+    }
+
+    public float getPreu() {
+        return preu;
+    }
+
+    public void setPreu(float preu) {
+        this.preu = preu;
     }
 
     public String getIngredients() {

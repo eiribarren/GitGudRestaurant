@@ -15,16 +15,16 @@ import static com.example.epumer.gitgudrestaurant.confirmarFacturaActivity.CLAU_
 
 public class comandaActivity extends AppCompatActivity {
     public final static String CLAU_EXTRA_PLATS = "com.example.epumer.gitgudrestaurants.platosDelMenuDelUsuario";
-    public ArrayList<Plat> platosDelMenuDelUsuario;
+    public ArrayList<String> platosDelMenuDelUsuario;
     private Plat[] mPlatsBank;
     private Button mConfirmarButton;
-    private ArrayList<Plat> platsSeleccionats;
+    private ArrayList<String> platsSeleccionats;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         Intent intent= getIntent();
-        platsSeleccionats = intent.getParcelableArrayListExtra(CLAU_EXTRA_PLATS_SELECCIONATS);
+        platsSeleccionats = intent.getStringArrayListExtra(CLAU_EXTRA_PLATS_SELECCIONATS);
         setContentView(R.layout.activity_comanda);
         mPlatsBank = new Plat[] {
                 new Plat(this, "Arroz al minecraft",3.99f,Plat.Tipus.primer, R.drawable.plato1 ),
@@ -51,9 +51,9 @@ public class comandaActivity extends AppCompatActivity {
             }
         }
          if ( platsSeleccionats != null ) {
-            for ( Plat platSeleccionat : platsSeleccionats ) {
+            for ( String platSeleccionat : platsSeleccionats ) {
                 for ( Plat mPlat : mPlatsBank ) {
-                    if ( platSeleccionat.equals(mPlat) ) {
+                    if ( platSeleccionat.equals(mPlat.getNom()) ) {
                         mPlat.seleccionar();
                     }
                 }
@@ -74,14 +74,15 @@ public class comandaActivity extends AppCompatActivity {
     }
 
     private void escoltadorFinalitzarComanda(View v) {
-        platosDelMenuDelUsuario = new ArrayList<Plat>();
+        platosDelMenuDelUsuario = new ArrayList<String>();
         Intent intent = new Intent(this, confirmarFacturaActivity.class);
         for ( Plat mPlat : mPlatsBank ) {
             if ( mPlat.estaSeleccionado() ) {
-                platosDelMenuDelUsuario.add(mPlat);
+                platosDelMenuDelUsuario.add(mPlat.getNom() + "," + mPlat.getPreu());
             }
         }
         intent.putExtra(CLAU_EXTRA_PLATS, platosDelMenuDelUsuario);
+
         startActivity(intent);
     }
 }
