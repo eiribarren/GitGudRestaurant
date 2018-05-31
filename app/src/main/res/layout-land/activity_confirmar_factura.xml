@@ -54,6 +54,7 @@
             android:layout_width="wrap_content"
             android:layout_height="76dp"
             android:elevation="5dp"
+            android:layout_centerHorizontal="true"
             android:id="@+id/logo_factura"
             app:srcCompat="@drawable/logo" />
 

@@ -40,8 +40,8 @@ public class Plat extends RelativeLayout implements View.OnClickListener {
         this.imagen.setImageDrawable(context.getResources().getDrawable(idImagen));
         LinearLayout.LayoutParams lp = new LinearLayout.LayoutParams((int) getResources().getDimension(R.dimen.imageview_width), (int) getResources().getDimension(R.dimen.imageview_height));
         this.imagen.setLayoutParams(lp);
-        this.addView(this.preuTextView);
         this.addView(this.imagen);
+        this.addView(this.preuTextView);
     }
 
     public Plat (Context context, String nom, float preuTextView, Tipus tipus, int idImagen, String ingredients ) {
