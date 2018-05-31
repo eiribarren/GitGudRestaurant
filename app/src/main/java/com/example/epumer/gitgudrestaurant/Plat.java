@@ -8,6 +8,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class Plat extends RelativeLayout implements View.OnClickListener {
 
@@ -93,7 +94,7 @@ public class Plat extends RelativeLayout implements View.OnClickListener {
         this.tipus = tipus;
     }
 
-    public void seleccionar() { this.seleccionado = true; setBackgroundColor(getResources().getColor(R.color.seleccionado)); }
+    public void seleccionar() { this.seleccionado = true; Toast.makeText(getContext(), "Has seleccionat el plat " + this.getNom(), Toast.LENGTH_SHORT).show(); setBackgroundColor(getResources().getColor(R.color.seleccionado)); }
 
     public void deseleccionar() { this.seleccionado = false; setBackgroundColor(getResources().getColor(R.color.colorPantallaPrincipal)); }
 
