@@ -9,6 +9,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import static com.example.epumer.gitgudrestaurant.confirmarFacturaActivity.CLAU_EXTRA_PLATS_SELECCIONATS;
@@ -71,6 +72,7 @@ public class comandaActivity extends AppCompatActivity {
     private void afegirPlat(Plat mPlat, LinearLayout ll) {
         mPlat.setOnClickListener(mPlat);
         ll.addView(mPlat);
+        Toast.makeText(this, "Has seleccionat el plat " + mPlat.getNom(), Toast.LENGTH_SHORT).show();
     }
 
     private void escoltadorFinalitzarComanda(View v) {
