@@ -10,8 +10,19 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 public class Plat extends RelativeLayout implements View.OnClickListener, Parcelable {
+
+    public static final Parcelable.Creator<Plat> CREATOR  =  new Parcelable.Creator<Plat>() {
+        public Plat createFromParcel(Parcel in) {
+            return new Plat(in);
+        }
+        public Plat [] newArray(int size) {
+            return new Plat [size];
+        }
+    };
+
     private String nom;
-    private TextView preu;
+    private float preu;
+    private TextView preuTextView;
     private ImageView imagen;
     private String ingredients;
     private String descripcio;
@@ -25,41 +36,51 @@ public class Plat extends RelativeLayout implements View.OnClickListener, Parcel
 
     @Override
     public void writeToParcel(Parcel dest, int flags) {
+        dest.writeFloat(this.preu);
         dest.writeString(this.nom);
     }
-
+    public void readFromParcel(Parcel in){
+        this.preu = in.readFloat();
+        this.nom  = in.readString();
+    }
     public enum Tipus {
         primer, segon, postre, beguda
     }
 
-    public Plat ( Context context, String nom, float preu, Tipus tipus, int idImagen ) {
+
+    public Plat (Context context, String nom, float preu, Tipus tipus, int idImagen ) {
         super(context);
         this.nom = nom;
         this.tipus = tipus;
-        this.preu = new TextView(context);
-        this.preu.setText(String.valueOf(preu) + "€");
-        this.preu.setPadding(5,5,5,5);
-        this.preu.setTextColor(context.getResources().getColor(R.color.colorPrecio));
-        this.preu.setBackgroundColor(context.getResources().getColor(R.color.sombra));
+        this.preu = preu;
+        this.preuTextView = new TextView(context);
+        this.preuTextView.setText(String.valueOf(preu) + "€");
+        this.preuTextView.setPadding(5,5,5,5);
+        this.preuTextView.setTextColor(context.getResources().getColor(R.color.colorPrecio));
+        this.preuTextView.setBackgroundColor(context.getResources().getColor(R.color.sombra));
         this.imagen = new ImageView(context);
         this.imagen.setImageDrawable(context.getResources().getDrawable(idImagen));
         LinearLayout.LayoutParams lp = new LinearLayout.LayoutParams((int) getResources().getDimension(R.dimen.imageview_width),(int) getResources().getDimension(R.dimen.imageview_height));
         this.imagen.setLayoutParams(lp);
-        this.addView(this.preu);
+        this.addView(this.preuTextView);
         this.addView(this.imagen);
     }
 
-    public Plat(Parcel source) {
-        prevName =
+
+
+    public Plat(Context context, Parcel source) {
+        super(context);
+        readFromParcel(source);
+
     }
 
-    public Plat ( Context context, String nom, float preu, Tipus tipus, int idImagen, String ingredients ) {
-        this(context,nom,preu,tipus, idImagen);
+    public Plat (Context context, String nom, float preuTextView, Tipus tipus, int idImagen, String ingredients ) {
+        this(context,nom, preuTextView,tipus, idImagen);
         this.ingredients = ingredients;
     }
 
-    public Plat ( Context context, String nom, float preu, Tipus tipus, int idImagen, String ingredients, String descripcio ) {
-        this(context, nom,preu,tipus, idImagen, ingredients);
+    public Plat (Context context, String nom, float preuTextView, Tipus tipus, int idImagen, String ingredients, String descripcio ) {
+        this(context, nom, preuTextView,tipus, idImagen, ingredients);
         this.descripcio = descripcio;
     }
 
@@ -109,13 +130,6 @@ public class Plat extends RelativeLayout implements View.OnClickListener, Parcel
             seleccionar();
         }
     }
-    public static final Parcelable.Creator<Plat> CREATOR  =  new Parcelable.Creator<Plat>() {
-        public Plat createFromParcel(Parcel in) {
-            return new Plat (in);
-        }
-        public Plat [] newArray(int size) {
-            return new Plat [size];
-        }
-    };
+
 
 }
